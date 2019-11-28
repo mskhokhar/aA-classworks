@@ -1,0 +1,13 @@
+<h1>CAT iNDex!!1!!11</h1>
+<table>
+  <thead>
+    
+      <th>all of the cats ever</th>
+    
+     <% @cats.each do |cat| %>
+    <tr>
+      <a href="<% cats_url(cat)%>"><%= cat.name%></a><br>
+    </tr>
+    <% end %>
+  </thead>
+</table>

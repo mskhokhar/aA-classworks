@@ -1,0 +1,29 @@
+<form action="<%=cats_url%>" method="POST">
+  <label >name
+    <input type="text" name="cat[name]">
+  </label>
+  <div>😂😂😂😂😂😂</div>
+  <label >sex
+      <input type="radio" name="cat[sex]" value="M">M
+      <input type="radio" name="cat[sex]" value="F">F
+  </label>
+  <div>😂😂😂😂😂😂</div>
+  <label>color
+    <select name="cat[color]" >
+      <option selected >--Select Color--</option>
+    <% Cat.colors.each do |color| %>
+      <option value="<%= color %>"><%= color %></option>
+    <% end %>
+    </select>
+  <div>😂😂😂😂😂😂</div>
+  </label>
+  <label>Birth Date
+    <input type="date" name = "cat[birth_date]" >
+  </label>
+  <div>😂😂😂😂😂😂</div>
+  <label >Description
+    <input type="textarea" name="cat[description]"> 
+  </label>
+  <div>😂😂😂😂😂😂</div>
+  <input type= "submit" value="Add cat!!!">
+</form>

@@ -1,0 +1,11 @@
+/* PHASE 2: Notifications */
+
+.badge {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color:black;
+  display: inline-flex;
+  vertical-align: middle;
+}
+

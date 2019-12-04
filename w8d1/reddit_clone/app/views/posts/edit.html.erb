@@ -1,0 +1,21 @@
+<form action="<%= sub_post_url(@sub) %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <h1>Edit Post</h1>
+  <label>Title
+    <input type="text" name="post[title]" value="<%= @post.title %>">
+  </label>  
+  <label>Url
+    <input type="text" name="post[url]" value="<%= @post.url %>">
+  </label>  
+  <label>Content
+    <input type="text" name="post[content]" value="<%= @post.content %>">
+  </label>  
+  <% if @post.sub_ids %>
+    <label>Subs
+      <% @post.sub_ids.each do |sub_id| %>
+        <input type="checkbox" name="post[subs]" value="<%= Sub.find(sub_id).title %>">
+      <% end %>
+    </label>
+  <% end %>
+  <input type="submit" value="Update Post">
+</form>

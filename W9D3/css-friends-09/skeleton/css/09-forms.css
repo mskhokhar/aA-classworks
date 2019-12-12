@@ -1,0 +1,25 @@
+/* PHASE 9: Forms */
+
+.form-fieldset{
+  float: left;
+  margin: 0 0 0 20px;
+  padding: 19px;
+  width: 500px;
+  background: #eee;
+  background-origin: 1px solid #ccc;
+  border-radius: 5px;
+}
+.input>label {
+  display: block;
+  font-weight: 700;
+  padding: 0 0 5px 0;
+}
+
+.input > textarea, .input > input {
+  display: block;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: calc(100% - 22px);
+  border-radius: 5px;
+}

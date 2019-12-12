@@ -1,0 +1,67 @@
+.grid {
+  display: flex;
+  width: 480px;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  justify-content: center;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+h1 {
+  font-size: 100px;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.square {
+  list-style-type: none;
+  background: gray;
+  height: 150px;
+  width: 150px;
+  /* padding: 10px; */
+  border: solid 5px black;
+
+}
+
+.square:hover{
+  background: yellow;
+}
+
+.square-won:hover{
+  background: green;
+}
+.square-lost:hover{
+  background: white;
+}
+
+.square-clicked{
+  text-align: center;
+  background: white;
+  font-weight: bolder;
+  font-size: 110px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.square-won{
+  text-align: center;
+  background: green;
+  color: white;
+  font-weight: bolder;
+  font-size: 110px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.square-lost{
+  text-align: center;
+  background: white;
+  color: red;
+  font-weight: bolder;
+  font-size: 110px;
+  font-family: Arial, Helvetica, sans-serif;
+}

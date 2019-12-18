@@ -1,0 +1,60 @@
+.clock{
+    font-family: 'Courier Prime';
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    border: solid black;
+    padding: 10px;
+    background-color: orange;
+    margin-bottom: 20px;
+}
+.titles{
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: float; */
+    float: right;
+}
+/* h2{
+    display: inline;
+} */
+.tabs{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.tab:last-child{
+
+}
+
+.tabHead{
+    
+    /* padding: 5px; */
+    width: 32%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid 2px black;
+    background-color: cornflowerblue;
+    text-align: center;
+}
+.tabContent{
+    text-align: center;
+    display: block;
+    /* margin-top: 8px; */
+    border: solid 2px black;
+    width: 300px;
+    border-top: none;
+    height: 60px;
+    background-color: cornflowerblue;
+
+
+}
+
+.clickedTab{
+    border-bottom: none;
+    font-weight: bold;
+}

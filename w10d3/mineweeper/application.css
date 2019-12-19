@@ -1,0 +1,53 @@
+
+
+.tile{
+    display: flex;
+    background-color: gray;
+    border: lightgray inset 3px;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+}
+.explored{
+    display: flex;
+    background-color: white;
+    border: lightgray solid 3px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.tile:hover{
+    border: lightgray outset 3px;
+}
+
+.board{
+    display: flex;
+    margin: 50px auto;
+}
+.game{
+    display: flex;
+    
+    margin: auto;
+}
+body{ 
+     text-align: center;
+}
+.hidden{
+    display: none;
+}
+.modal-screen{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+    
+}
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}

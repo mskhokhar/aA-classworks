@@ -78,7 +78,13 @@ function reverseString(str) {
 // pow(3, 4)    // => 81
 // pow(2, -5)   // => 0.03125
 function pow(base, exponent) {
-
+    if(exponent === 0) return 1;
+    if(exponent === 1) return base;
+    if(exponent < 0) {
+        base = 1.0/base;
+        exponent = -exponent;
+    }
+    return base * pow(base, exponent-1)
 }
 
 
@@ -111,6 +117,17 @@ function pow(base, exponent) {
 //     2-dimensional array: [['some data']]
 //     3-dimensional array: [[['some data']]]
 function flatten(data) {
+    if(!(data instanceof Array)) return [data];
+    let res = []
+    for (let i = 0; i < data.length; i++) {
+        const element = data[i];
+        if (element instanceof Array) {
+          res = res.concat(flatten(element));
+        } else {
+          res.push(element);
+        }
+    }
+    return res;
 
 }
 
@@ -154,7 +171,12 @@ function flatten(data) {
 // fileFinder(desktop, 'everlong.flac');            // => true
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
 function fileFinder(directories, targetFile) {
-
+    for(let key in directories){
+        if(key === targetFile || fileFinder(directories[key],targetFile)){
+            return true
+        }
+    }
+    return false;
 }
 
 
@@ -168,7 +190,16 @@ function fileFinder(directories, targetFile) {
 // pathFinder(desktop, 'everlong.flac'));       // => '/music/genres/rock/everlong.flac'
 // pathFinder(desktop, 'honeybadger.png'));     // => null
 function pathFinder(directories, targetFile) {
-
+    
+    for (let key in directories) {
+        if(key === targetFile ) return '/' + targetFile
+        subdir = directories[key];
+        res = pathFinder(subdir, targetFile)
+        if (res !== null) {
+            return key + res;
+        }
+    }
+    return null;
 }
 
 

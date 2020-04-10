@@ -4,3 +4,4 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy, :new]
   resources :bands
 end
+/Users/mymac/Desktop/aA-classworks/W5D5/movie_buff/config/routes.rb

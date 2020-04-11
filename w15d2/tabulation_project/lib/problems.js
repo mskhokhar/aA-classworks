@@ -20,19 +20,34 @@
 // stepper([3, 1, 0, 5, 10]);           // => true, because we can step through elements 3 -> 5 -> 10
 // stepper([3, 4, 1, 0, 10]);           // => true, because we can step through elements 3 -> 4 -> 10
 // stepper([2, 3, 1, 1, 0, 4, 7, 8])    // => false, there is no way to step to the end
-function stepper(nums) {
-    let result = new Array(nums.length).fill(false);
-    result[0] = true;
-    for(let i = 0; i < nums.length; i++){
-        if(result[i]){
-            for(let j = 1; j <= nums[i]; j++){
-                result[i+j]=true;
-            }
-        }
+function stepper(nums, memo ={}) {
+    let key = "-" + nums;
+    if (key in memo) return memo[key];
+    if (nums.length === 0) return true;
+    let maxSteps = nums[0];
+    for (let step = 1; step <= maxSteps; step++) {
+      if (stepper(nums.slice(step),memo)){
+          memo[key] = true;
+          return true;
+      } 
     }
-    return result[nums.length-1]
-
+    memo[key] = false;
+    return false;
 }
+// function stepper(nums) {
+//   let result = new Array(nums.length).fill(false);
+//   result[0] = true;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (result[i]) {
+//       for (let j = 1; j <= nums[i]; j++) {
+//         result[i + j] = true;
+//       }
+//     }
+//   }
+//   return result[nums.length - 1];
+// }
+
+ 
 
 
 // Write a function, maxNonAdjacentSum(nums), that takes in an array of nonnegative numbers.

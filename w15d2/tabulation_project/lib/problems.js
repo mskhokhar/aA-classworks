@@ -60,9 +60,26 @@ function stepper(nums, memo ={}) {
 //
 // maxNonAdjacentSum([2, 7, 9, 3, 4])   // => 15, because 2 + 9 + 4
 // maxNonAdjacentSum([4,2,1,6])         // => 10, because 4 + 6 
-function maxNonAdjacentSum(nums) {
-
+function maxNonAdjacentSum(nums, memo={}) {
+    if(nums.length in memo) return memo[nums.length]
+    if(nums.length === 0) return 0;
+    
+    let firstEle = nums[0];
+    memo[nums.length] = Math.max(firstEle + maxNonAdjacentSum(nums.slice(2),memo), maxNonAdjacentSum(nums.slice(1),memo));
+    return memo[nums.length];
 }
+// function maxNonAdjacentSum(nums) {
+//     if(nums.length === 0) return 0;
+//     let table = new Array(nums.length).fill(0);
+//     table[0] = nums[0];
+//     for (let i = 1; i < table.length; i++) {
+//         let notAdjacentEle = table[i-2] ? table[i-2] : 0;
+//         let thisNum = notAdjacentEle + nums[i];
+//         let neighbour = table[i-1];
+//         table[i] = Math.max(thisNum, neighbour)      
+//     }
+//     return table[table.length-1]
+// }
 
 
 // Write a function, minChange(coins, amount), that accepts an array of coin values
@@ -78,15 +95,7 @@ function maxNonAdjacentSum(nums) {
 // minChange([1, 5, 10, 25], 15)    // => 2, because 10 + 5 = 15
 // minChange([1, 5, 10, 25], 100)   // => 4, because 25 + 25 + 25 + 25 = 100
 function minChange(coins, amount) {
-    if(amount === 0) return 0;
-    let result = [];
-    for (let index = 0; index < coins.length; index++) {
-        const coin = coins[index];
-        if (coin <= amount)
-          result.push(minChange(coins, amount - coin) + 1);
-        
-    }
-    return Math.min(...result)
+    
 }
 
 

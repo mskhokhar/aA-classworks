@@ -65,7 +65,10 @@ function maxNonAdjacentSum(nums, memo={}) {
     if(nums.length === 0) return 0;
     
     let firstEle = nums[0];
-    memo[nums.length] = Math.max(firstEle + maxNonAdjacentSum(nums.slice(2),memo), maxNonAdjacentSum(nums.slice(1),memo));
+    memo[nums.length] = Math.max(
+        firstEle + maxNonAdjacentSum(nums.slice(2),memo), 
+        maxNonAdjacentSum(nums.slice(1),memo)
+        );
     return memo[nums.length];
 }
 // function maxNonAdjacentSum(nums) {

@@ -113,7 +113,13 @@ class LinkedList {
 
     // TODO: Implement the get method here
     get(index) {
-
+        if(index >= this.length) return null;
+        let res;
+        while (index >0) {
+            res = this.head.next;
+            index--;
+        }
+        return res;
     }
 
     // TODO: Implement the set method here

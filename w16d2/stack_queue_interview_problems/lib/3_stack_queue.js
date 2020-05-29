@@ -26,11 +26,38 @@
 
 class Node {
     // TODO: Implement the Node class!
+    constructor(val){
+        this.value = val;
+        this.next = null;
+    }
 
 }
 
 class Stack {
     // TODO: Implement the Stack class!
+    constructor(){
+        this.top  = null;
+        this.bottom = null;
+        this.length = 0;
+    }
+    push(val){
+        let newNode = new Node(val);
+        if(!this.top){
+            this.top = newNode;
+            this.bottom = newNode;
+        }else{
+            let oldNode = this.top;
+            this.top = newNode;
+            this.top.next = oldNode;
+        }
+        return ++this.length
+    }
+    pop(){
+
+    }
+    size(){
+        return this.length;
+    }
 
 }
 
